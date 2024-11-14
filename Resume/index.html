@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div id="loader"><div class="ring"></div></div>
+    <style>
+        .ring {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #3498db;
+            animation: rotate 2s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (max-width: 768px) {
+            .ring {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loader').style.display = 'none';
+            }, 1000); // Wait for 1 second before hiding the loader
+        };
+    </script>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="dropbtn"><b>HOME</b></a>
+        </div>
+    </nav>
+    
+    <main>
+        <header>
+            <h1 class="animated-title">
+                <svg width="200" height="60">
+                    <text x="10" y="40" class="text-animation">Welcome to my Portfolio</text>
+                </svg>
+            </h1>
+        </header>
+    
+        <section id="portfolio">
+            <h2><i class="fas fa-briefcase"></i> My Portfolio</h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Resume</h3>
+                    <p>View my professional resume, highlighting my education, work experience, and skills.</p>
+                    <a href="resume.html" class="view-resume">View Resume</a>
+                </div>
+    
+                <div class="portfolio-item">
+                    <h3>Projects</h3>
+                    <p>Explore my featured projects, showcasing my skills in software development and electronics engineering.</p>
+                    <a href="projects.html" class="view-projects">View Projects</a>
+                </div>
+    
+                <div class="portfolio-item">
+                    <h3>Certificates</h3>
+                    <p>View my professional certifications, demonstrating my expertise in various technologies and tools.</p>
+                    <a href="certificates.html" class="view-certificates">View Certificates</a>
+                </div>
+    
+                <div class="portfolio-item">
+                    <h3>Bio-Data</h3>
+                    <p>Get to know me better through my bio-data, including my personal and professional information.</p>
+                    <a href="biodata.html" class="view-biodata">View Bio-Data</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Koustubh Katti. All rights reserved.</p>
+    </footer>
+</body>
+</html>

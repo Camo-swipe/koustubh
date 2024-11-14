@@ -1,0 +1,246 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover {
+    transform: scale(1.1);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3498db;
+}
+
+.dropbtn {
+    background-color: #2c3e50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #3498db;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    background-color: #3498db;
+}
+
+
+
+/* Additional styles specific to biodata page */
+main .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+main .info-item {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+main .animated-title svg {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main .animated-title text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    fill: #2c3e50;
+    stroke: #3498db;
+    stroke-width: 1px;
+    animation: textAnimation 3s ease-in-out infinite;
+}
+
+@keyframes textAnimation {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+        fill: transparent;
+    }
+    70% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffset: -20%;
+        fill: transparent;
+    }
+    80%, 100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffset: -20%;
+        fill: #3498db;
+    }
+}
+
+main .info-item:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+main .label {
+    color: #2c3e50;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+main .value {
+    color: #34495e;
+    display: block;
+}
+
+/* Hobbies section styling */
+main .hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+main .hobby-item {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+main .hobby-item:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-5px);
+}
+
+main .hobby-item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Section icons */
+main section h2 i {
+    margin-right: 0.5rem;
+    color: #3498db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    main .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    main .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+#go-to-top {
+    position: fixed;
+    bottom: 100px; /* Adjusted to ensure it's not overlapped by the footer section */
+    right: 20px;
+    z-index: 1000;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0; /* Initially hidden */
+}
+
+#go-to-top:hover {
+    background-color: #2c3e50;
+    transform: translateY(-5px);
+}
+
+#go-to-top i {
+    font-size: 20px;
+}
